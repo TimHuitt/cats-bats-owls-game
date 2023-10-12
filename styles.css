@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Cinzel:wght@500&display=swap');
+
+/* remove mobile tap highlighting */
+div, [role="button"], input[type="button"], input[type="submit"], input[type="reset"] {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.main-container{ 
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 70vmin;
+  height: 68vmin;
+  border-radius: 50%;
+  border: 2px solid black;
+  background: radial-gradient(#000 68%, #fff 70%, #000 75%);
+  box-sizing: border-box;
+  transform: translate(-50%);
+  transition: .2s width;
+  z-index: 3;
+}
+.main-container p {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  transform: translate(-50%);
+}
+.current-text {
+  padding-top: 3%;
+}
+.scoreboard {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  width: 70%;
+  height: 10%;
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  transform: translate(-50%);
+}
+.scoreboard .win,
+.scoreboard .loss,
+.scoreboard .draw {
+  padding: 0 3% 0 0;
+}
+
+.rules-container,
+.rules { 
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 70vmin;
+  height: 68vmin;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%);
+  transition: .5s top;
+  overflow: hidden;
+}
+.rules-container {
+  z-index: 3;
+}
+.rules {
+  top: 83%;
+  background: radial-gradient(#000 68%, #fff 73%, #fff 70%);;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  transition: .2s width, .5s top;
+}
+.rules-header {
+  display: flex;
+  padding-top: 5%;
+  line-height: 20px;
+}
+.rules-header p {
+  top: 5%;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  z-index: 3;
+}
+.rules-block h1 {
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  padding-top: 5%;
+  text-align: center;
+}
+.and {
+  font-size: 10px;
+}
+.rules-block {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 200px;
+  color: white;
+  text-align: center;
+  text-align: center;
+}
+.rules::-webkit-scrollbar {
+  display: none;
+}
+
+.selections {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 110%;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+.selections img {
+  display: flex;
+  position: absolute;
+  top: 10%;
+  width: 90%;
+  height: 90%;
+  filter: invert(1);
+  transform: translate(5%);
+}
+
+.bat,
+.cat,
+.owl{
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  background: black;
+  filter: brightness(100%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.cat-container {
+  transform: rotate(315deg);
+  transition: 1s transform, 1s height;
+  height: 165%;
+}
+.cat img {
+  width: 100%;
+  height: 100%;
+  transform: translate(-6%, -9%);
+}
+
+.bat-container {
+  transform: rotate(0deg);
+  overflow: hidden;
+  transition: 1s transform, 1s height;
+  height: 165%;
+}
+.bat img {
+  width: 110%;
+  height: 60%;
+  transform: translate(-4%, 30%);
+}
+
+.owl-container {
+  transform: rotate(45deg);
+  transition: 1s transform, 1s height;
+  height: 165%;
+}
+
+.cat-picked,
+.bat-picked,
+.owl-picked {
+  display: none;
+  position: absolute;
+  width: 30%;
+  height: 50%;
+  justify-content: center;
+  transition: 1s transform, 1s height;
+  z-index: 1;
+}
+
+.radial {
+  display: flex;
+  position: absolute;
+  width: 30%;
+  justify-content: center;
+  transform-origin: center;
+  z-index: 1;
+}
+.top {
+  z-index: 3;
+}
+.disabled {
+  pointer-events:  none;
+}
+.hidden {
+  display: none;
+}
+@media (min-width: 600px) {
+  .rules-content {
+    font-size: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .main-container p {
+    font-size: 24px;
+  }
+  .rules-content {
+    font-size: 18px;
+  }
+  .rules-block h1 {
+    font-size: 16px;
+  }
+}
+@media (max-height: 600px) {
+  .main-container p {
+    font-size: 24px;
+  }
+}
+@media (max-height: 400px) {
+  .main-container p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .main-container p {
+    font-size: 16px;
+  }
+  .rules-content {
+    font-size: 14px;
+  }
+  .rules-block h1 {
+    font-size: 14px;
+  }
+}
